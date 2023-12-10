@@ -1,71 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
-
-    <title>
-        explorando matematica com auxílio da robotica</title>
+  <title>Web Jogo - Página de Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    form {
+      text-align: center;
+    }
+  </style>
+  <script>
+    function fazerLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      
+      // Verificar se o nome de usuário e a senha estão corretos
+      if (username === "usuario" && password === "senha") {
+        // Redirecionar para a página de sucesso
+        window.location.href = "pagina_sucesso.html";
+      } else {
+        // Exibir mensagem de erro
+        document.getElementById("mensagemErro").innerHTML = "Nome de usuário ou senha inválidos.";
+      }
+    }
+    
+    function jogarComoConvidado() {
+      // Redirecionar para a página de sucesso como convidado
+      window.location.href = "pagina_sucesso.html";
+    }
+  </script>
 </head>
-
 <body>
-    <header>
-        <h1>Bem-vindo <br> explorando matematica com auxílio da robotica</h1>
-        <br>
-        <br> <img src="f12.png" alt="robótica em ação">
-
-
-        <div class="botoes">
-
-            <a href="lego.html"><button>Industria </button></a>
-            <a href="arduino.html"><button>Agronomia</button></a>
-            <a href="lowcode.html"><button>Jogos</button></a>
-            <a href="maker.html"><button>Maker</button></a>
-            <p class="aviso">Aviso
-            </p>
-        </div>
-
-
-        <div id="engrenagem" class="hidden"></div>
-    </header>
-
-
-
-    <nav>
-
-    </nav>
-
-    <main>
-        <section>
-            <h2>Industria</h2>
-            <!--conteúdo relacionado a que estamos oferecendo 
-            -->
-        </section>
-
-        <section>
-            <h2>Agronomia </h2>
-            <!-- Conteúdo relacionado a jogos  aqui -->
-        </section>
-
-        <section>
-            <h2>Jogos</h2>
-            <!-- Conteúdo relacionado à robótica aqui -->
-        </section>
-        <section>
-            <h2>Maker</code></h2>
-            <!--conteúdo relacionado a que estamos oferecendo 
-            -->
-        </section>
-    </main>
-
-
-    <footer>
-        <p>&copy; 2023 Aprendendo Matemática com Ajuda dos Jogos e Robótica</p>
-
-    </footer>
+  <h2>Web Jogo - Fazer Login</h2>
+  <form>
+    <label for="username">Nome de usuário:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <input type="button" value="Entrar" onclick="fazerLogin()">
+    
+    <p id="mensagemErro" style="color: red;"></p>
+    
+    <hr>
+    
+    <p>Ou</p>
+    
+    <input type="button" value="Jogar como Convidado" onclick="jogarComoConvidado()">
+  </form>
 </body>
-
 </html>
