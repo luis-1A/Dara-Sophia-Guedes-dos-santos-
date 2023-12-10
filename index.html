@@ -3,15 +3,24 @@
 <head>
   <title>Web Jogo - Página de Login</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    @media only screen and (max-width: 600px) {
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      form {
+        text-align: center;
+      }
     }
     
-    form {
-      text-align: center;
+    @media only screen and (min-width: 601px) {
+      body {
+        text-align: center;
+        padding: 20px;
+      }
     }
   </style>
   <script>
@@ -56,3 +65,4 @@
   </form>
 </body>
 </html>
+
