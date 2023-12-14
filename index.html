@@ -1,68 +1,59 @@
-<!DOCTYPE html>
-<html>
+DOCTYPE html>
+<html lang="pt-br">
+
 <head>
-  <title>Web Jogo - Página de Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @media only screen and (max-width: 600px) {
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      
-      form {
-        text-align: center;
-      }
+    .menu-button {
+      background-color: #405DE6;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
     }
-    
-    @media only screen and (min-width: 601px) {
-      body {
-        text-align: center;
-        padding: 20px;
-      }
+
+    .menu {
+      display: none;
+      position: fixed;
+      bottom: 70px;
+      right: 30px;
+      z-index: 998;
+    }
+
+    .menu.active {
+      display: block;
+    }
+
+    .menu-item {
+      display: block;
+      margin-bottom: 10px;
     }
   </style>
+  <title>explorando matemática com auxílio da robótica</title>
+</head>
+
+<body>
+  <div class="menu-button" onclick="toggleMenu()">☰</div>
+  <div class="menu" id="menu">
+    <a href="lego.html" class="menu-item"><button>Indústria</button></a>
+    <a href="lowcode.html" class="menu-item"><button>Jogos</button></a>
+    <a href="maker.html" class="menu-item"><button>Maker</button></a>
+  </div>
+
   <script>
-    function fazerLogin() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      
-      // Verificar se o nome de usuário e a senha estão corretos
-      if (username === "usuario" && password === "senha") {
-        // Redirecionar para a página de sucesso
-        window.location.href = "pagina_sucesso.html";
-      } else {
-        // Exibir mensagem de erro
-        document.getElementById("mensagemErro").innerHTML = "Nome de usuário ou senha inválidos.";
-      }
-    }
-    
-    function jogarComoConvidado() {
-      // Redirecionar para a página de sucesso como convidado
-      window.location.href = "pagina_sucesso.html";
+    function toggleMenu() {
+      var menu = document.getElementById('menu');
+      menu.classList.toggle('active');
     }
   </script>
-</head>
-<body>
-  <h2>Web Jogo - Fazer Login</h2>
-  <form>
-    <label for="username">Nome de usuário:</label>
-    <input type="text" id="username" name="username" required><br><br>
-    
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" required><br><br>
-    
-    <input type="button" value="Entrar" onclick="fazerLogin()">
-    
-    <p id="mensagemErro" style="color: red;"></p>
-    
-    <hr>
-    
-    <p>Ou</p>
-    
-    <input type="button" value="Jogar como Convidado" onclick="jogarComoConvidado()">
-  </form>
 </body>
-</html>
 
+</html>
