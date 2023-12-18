@@ -2,56 +2,24 @@
 <html>
 <head>
     <title>Carta para Dara Sophia</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        #carta {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 200px;
-            background-color: pink;
-            padding: 20px;
-            text-align: center;
-        }
-        #botao {
-            display: none;
-            margin-top: 20px;
-        }
-    </style>
+    
 </head>
 <body>
-    <div id="carta">
-        <p>Querida Dara Sophia,</p>
-        <p>Texto da carta...</p>
-        <button id="botao" onclick="mostrarCorações()">Eu gosto bastante de você ❤️</button>
+    <div class="container">
+  <div class="envelope"></div>
+  <div class="card">
+    <h1 class="message">WILL CHU BE MY VALENTINE?</h1>
+    <div class="pikachu">
+      <div class="limbs"></div>
+      <div class="heart"></div>
+      <div class="arms"></div>
+      <div class="smile"></div>
     </div>
-
-    <script>
-        function mostrarCarta() {
-            var carta = document.getElementById('carta');
-            carta.style.display = 'block';
-            setTimeout(function() {
-                carta.innerHTML += "<p>Aqui está o texto que você escrever</p>";
-                var botao = document.getElementById('botao');
-                botao.style.display = 'block';
-            }, 5000);
-        }
-
-        function mostrarCorações() {
-            // Adicione aqui o código para mostrar os corações
-        }
-
-        mostrarCarta();
-    </script>
+  </div>
+  <div class="cover"></div>
+  <div class="lid"></div>
+  <div class="shadow"></div>
+    
 </body>
 </html
     
