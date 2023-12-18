@@ -286,3 +286,26 @@ body {
     transform: translatey(-15vmin);
   }
 }
+@keyframes heartAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20vmin) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40vmin) rotate(45deg);
+  }
+}
+
+.heart-animation {
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #fc978b;
+  border-radius: 50%;
+  animation: heartAnimation 5s linear infinite;
+}
