@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Corações Batendo</title>
+    <title>Carta para Dara Sophia</title>
     <style>
         body {
             display: flex;
@@ -10,87 +10,48 @@
             height: 100vh;
             margin: 0;
         }
-        canvas {
+        #carta {
+            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            padding: 20px;
+            text-align: center;
+        }
+        #botao {
+            display: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <canvas id="heartCanvas" width="200" height="200"></canvas>
+    <div id="carta">
+        <p>Querida Dara Sophia,</p>
+        <p>Texto da carta...</p>
+        <button id="botao" onclick="mostrarCorações()">Eu gosto bastante de você ❤️</button>
+    </div>
 
     <script>
-        var canvas = document.getElementById('heartCanvas');
-        var ctx = canvas.getContext('2d');
-        var heartbeat = 0;
-        var heartSize = 50;
-        var hearts = [];
-
-        function drawHeart() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.font = "20px Arial";
-            ctx.fillText("Dara Sophia ", 10, 190);
-            ctx.save();
-            ctx.translate(100, 100);
-            ctx.scale(heartSize, heartSize);
-            ctx.beginPath();
-            ctx.moveTo(0, 0.4);
-            ctx.bezierCurveTo(0.3, 0, 0.6, 0, 1, 0.4);
-            ctx.bezierCurveTo(1.4, 0.7, 1.4, 1.2, 1, 1.6);
-            ctx.lineTo(0.5, 2);
-            ctx.lineTo(0, 1.6);
-            ctx.bezierCurveTo(-0.4, 1.2, -0.4, 0.7, 0, 0.4);
-            ctx.closePath();
-            ctx.fillStyle = 'red';
-            ctx.fill();
-            ctx.restore();
-            
-            heartSize += Math.sin(heartbeat) * 0.02;
-            heartbeat += 0.05;
-            
-            requestAnimationFrame(drawHeart);
+        function mostrarCarta() {
+            var carta = document.getElementById('carta');
+            carta.style.display = 'block';
+            setTimeout(function() {
+                carta.innerHTML += "<p>Aqui está o texto que você escrever</p>";
+                var botao = document.getElementById('botao');
+                botao.style.display = 'block';
+            }, 5000);
         }
 
-        function createHeart() {
-            var x = Math.random() * canvas.width;
-            var y = Math.random() * canvas.height;
-            var size = Math.random() * 20 + 10;
-            hearts.push({ x: x, y: y, size: size, opacity: 1 });
+        function mostrarCorações() {
+            // Adicione aqui o código para mostrar os corações
         }
 
-        function drawHearts() {
-            for (var i = 0; i < hearts.length; i++) {
-                var heart = hearts[i];
-                if (heart.opacity > 0) {
-                    ctx.globalAlpha = heart.opacity;
-                    ctx.font = "20px Arial";
-                    ctx.fillText("Dara Sophia Guedes dos Santos", 10, 190);
-                    ctx.save();
-                    ctx.translate(heart.x, heart.y);
-                    ctx.scale(heart.size, heart.size);
-                    ctx.beginPath();
-                    ctx.moveTo(0, 0.4);
-                    ctx.bezierCurveTo(0.3, 0, 0.6, 0, 1, 0.4);
-                    ctx.bezierCurveTo(1.4, 0.7, 1.4, 1.2, 1, 1.6);
-                    ctx.lineTo(0.5, 2);
-                    ctx.lineTo(0, 1.6);
-                    ctx.bezierCurveTo(-0.4, 1.2, -0.4, 0.7, 0, 0.4);
-                    ctx.closePath();
-                    ctx.fillStyle = 'red';
-                    ctx.fill();
-                    ctx.restore();
-                    heart.y -= Math.random() * 2 + 1;
-                    heart.opacity -= 0.01;
-                }
-            }
-            requestAnimationFrame(drawHearts);
-        }
-
-        drawHeart();
-        setInterval(createHeart, 1000);
-        drawHearts();
+        mostrarCarta();
     </script>
 </body>
-</html>
+</html
+    
